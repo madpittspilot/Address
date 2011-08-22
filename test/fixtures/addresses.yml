@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  street_1: MyString
+  street_2: MyString
+  person_id: 1
+  suburb_id: 1
+
+two:
+  street_1: MyString
+  street_2: MyString
+  person_id: 1
+  suburb_id: 1

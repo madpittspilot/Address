@@ -1,0 +1,4 @@
+<%= f.label :phone %>
+<%= f.text_field :number %>
+<%= f.collection_select(:location_id, Location.all, :id, :location, options ={:prompt => "Location"}, :class =>"location_select") %>
+<%= f.link_to_remove "Remove" %>

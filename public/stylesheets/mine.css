@@ -1,0 +1,177 @@
+/* Global styles */
+
+html,body { margin:0px; padding:0px; } 
+body { background-color: #fff; color: #333; }
+
+
+body, p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size:   13px;
+  line-height: 18px;
+}
+
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+a { color: #000; }
+a:visited { color: #666; }
+a:hover { color: #8500C7; }
+
+h1 { font-size: 18pt; font-weight: bold; text-align: left;  } 
+
+
+div.field, div.actions {
+  margin-bottom: 10px;
+}
+
+/*
+  This will align labels to their right border. Good for label and field on same line (pretend table layout)
+  Width could be 4em...
+*/
+#field label {
+	width:20%;
+	float:left;
+	text-align:right;
+	margin-right: 0.5em;
+	display: block;
+}
+
+span.location-show {
+	width:4em;
+	float:left;
+	text-align:right;
+	margin-right: 2em;
+	display: block;		
+}
+
+
+/* Styles for main page */
+#banner { 
+	    background: #58A000; 
+	    border-bottom: 2px solid; 
+		height: 40px;
+		position:fixed;
+		width:100%;
+		top:0;
+		left:0;
+	    font: small-caps 40px/40px "Times New Roman", serif; 
+	    color: #282; 
+	    text-align: center;
+}
+
+#banner img { 
+	    float: left;
+}
+
+#column-container { 
+
+		margin: 0;
+		overflow: hidden;
+	    padding-top: 42px; 		
+}
+
+#main { 
+	    margin-left: 11em; 
+	    padding-left: 2em; 
+	    background: white;
+		padding-bottom: 1000px;
+		margin-bottom: -995px;
+}
+
+#left-column {
+	 	position: fixed;
+		padding-top: 1em;
+	    padding-left: 1em; 
+	    padding-bottom: 1em;
+	    width: 10em; 
+	    background: #315900;
+		padding-bottom: 1000px;
+		margin-bottom: -995px;
+}
+
+#left-column a { 
+	    color: #bfb; 
+	    font-size: small;
+}
+#left-column a:hover { color: #FFF700; }
+
+/* Styles for the cart in the main page 
+#store .cart_title { 
+	font: 120% bold;
+}
+
+#store .item_price, #store .total_line { 
+	text-align: right;
+}
+
+#store .total_line .total_cell { 
+	font-weight: bold; border-top: 1px solid #595;
+}
+
+
+ Styles for the cart in the sidebar 
+#cart, #cart table {
+  font-size: smaller; 
+  color:	white;
+}
+
+#cart table { 
+  border-top:	1px dotted #595; 
+  border-bottom: 1px dotted #595; 
+  margin-bottom: 10px;
+}
+
+
+ Styles for products/index 
+
+#product_list table {
+        border-collapse: collapse;
+}
+
+#product_list table tr td {
+        padding: 5px;
+        vertical-align: top;
+}
+
+#product_list .list_image {
+  width:        60px;
+  height:       70px;
+}
+
+#product_list .list_description {
+  width:        60%;
+}
+
+#product_list .list_description dl {
+        margin: 0;
+}
+
+#product_list .list_description dt {
+	color:        #244;
+	font-weight:  bold;
+	font-size:    larger;
+}
+
+#product_list .list_description dd {
+        margin: 0;
+}
+
+#product_list .list_actions {
+  font-size:    x-small;
+  text-align:   right;
+  padding-left: 1em;
+}
+
+#product_list .list_line_even {
+  background:   #e0f8f8;
+}
+
+#product_list .list_line_odd {
+  background:   #f8b0f8;
+}
+
+*/
+

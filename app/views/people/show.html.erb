@@ -1,0 +1,51 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @person.full_name %>
+</p>
+
+<p>  
+  <b>Phone:</b><br />
+    <% for phone in @person.phones %>
+      <span class="location-show"><%= phone.location.location %></span>
+      <a href="tel:<%= phone.number %>" style="text-decoration: none"><%= phone.number %></a><br />
+    <% end %>
+</p>
+
+<p>  
+
+
+<b>Email:</b><br />
+  <% for email in @person.emails %>
+  <span class="location-show"><%= email.location.location %></span>
+  <a href="mailto:<%= email.email %>"><%= email.email %></a><br />
+<% end %>
+
+
+</p>
+
+<p>
+  <b>Address:</b>
+  <% @person.addresses.each do |address| %>
+    <br /><%= address.street_1 if address %><br />
+    <%= address.suburb.suburb if address.suburb %><br />
+    <%= address.suburb.state.state unless address.suburb.blank? or address.suburb.state.blank? %>
+    <%= address.suburb.postcode if address.suburb %><br />
+    <%= address.suburb.state.country.country_long if address.suburb and address.suburb.state and address.suburb.state.country %><br />
+    <% end %>
+</p>
+
+<p>
+  <b>Dob:</b>
+  <%= @person.dob %>
+</p>
+
+<p>
+  <b>Note:</b>
+  <%= @person.note %>
+</p>
+
+
+<%= link_to 'Edit', edit_person_path(@person) %> |
+<%= link_to 'Back', people_path %>

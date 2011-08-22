@@ -1,0 +1,6 @@
+<%= f.label :suburb %><br />
+<%= f.text_field :suburb %>
+<%= f.link_to_remove "Remove" %><br />
+<%= f.label :postcode %><br />
+<%= f.text_field :postcode %><br />
+<%= f.collection_select(:state_id, State.all, :id, :state, options ={:prompt => "Select a State"}, :class =>"state_select") %><br />

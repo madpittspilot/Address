@@ -1,0 +1,29 @@
+<%= nested_form_for(@country) do |f| %>
+  <% if @country.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@country.errors.count, "error") %> prohibited this country from being saved:</h2>
+
+      <ul>
+      <% @country.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :country %><br />
+    <%= f.text_field :country %>
+  </div>
+  <div class="field">
+    <%= f.label :country_long %><br />
+    <%= f.text_field :country_long %>
+  </div>
+  <div class="field">  
+  <%= f.fields_for :states %>
+  <p><%= f.link_to_add "Add a State", :states %></p>
+  </div>  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

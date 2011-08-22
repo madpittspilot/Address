@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  suburb: MyString
+  postcode: MyString
+  state_id: 1
+
+two:
+  suburb: MyString
+  postcode: MyString
+  state_id: 1

@@ -1,0 +1,13 @@
+<p>
+<%= f.label "Street 1 " %>
+<%= f.text_field :street_1 %>
+<%= f.link_to_remove "Remove Address" %><br />
+<%= f.label "Street 2 " %>
+<%= f.text_field :street_2 %><br />
+<%= f.label "Suburb " %>
+<%= f.collection_select(:suburb_id, Suburb.all, :id, :suburb_and_state, options ={:prompt => "Select a Suburb"}, :class =>"suburb_select") %>
+</p>
+
+
+<!--  <%= f.select :suburb_id, Suburb.find(:all).collect{|p| [p.suburb, p.id]}, { :size => 100 }%><br /> -->
+<!--    <%= f.select(:suburb_id, Suburb.find(:all).collect{|p| [p.suburb, p.id]} + ['Or create a new one','new'], {:include_blank => 'Please select'}) %>-->
