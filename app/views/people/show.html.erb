@@ -19,7 +19,7 @@
 <b>Email:</b><br />
   <% for email in @person.emails %>
   <span class="location-show"><%= email.location.location %></span>
-  <a href="mailto:<%= email.email %>"><%= email.email %></a><br />
+  <a href="mailto:<%= email.email %>" style="text-decoration: none"><%= email.email %></a><br />
 <% end %>
 
 
