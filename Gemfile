@@ -6,7 +6,7 @@ gem 'rails', '3.0.9'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
-gem "nested_form"
+gem "nested_form", :git => 'git://github.com/ryanb/nested_form.git'
 
 # Use unicorn as the web server
 # gem 'unicorn'

@@ -1,6 +1,10 @@
 class CountriesController < ApplicationController
   # GET /countries
   # GET /countries.xml
+
+
+  
+  
   def index
     @countries = Country.all
 
@@ -26,6 +30,13 @@ class CountriesController < ApplicationController
   def new
     @country = Country.new
 
+    country.build_state
+    country.state.build_suburb
+    1.times do
+      suburb = @country.states.build
+      1.times { state.suburbs.build }
+    end
+    
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @country }

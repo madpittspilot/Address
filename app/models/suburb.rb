@@ -3,6 +3,7 @@ class Suburb < ActiveRecord::Base
     has_many :people, :through => :addresses
     belongs_to :state
     
+#    default_scope :order => "suburb"
     
     def suburb_and_state
       if state_id.to_i > 0          # if it is zero then the state_id was blank or nil

@@ -1,3 +1,9 @@
+GIT
+  remote: git://github.com/ryanb/nested_form.git
+  revision: 57f32788f1952bcd633057b4b56b69b51df17610
+  specs:
+    nested_form (0.1.1)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -39,7 +45,6 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.16)
-    nested_form (0.1.1)
     polyglot (0.3.2)
     rack (1.2.3)
     rack-mount (0.6.14)
@@ -73,6 +78,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  nested_form
+  nested_form!
   rails (= 3.0.9)
   sqlite3

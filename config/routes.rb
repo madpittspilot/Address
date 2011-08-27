@@ -1,12 +1,15 @@
 Address4::Application.routes.draw do
   resources :locations
-
   resources :countries
-
   resources :people
-
   resources :addresses
-
+  resources :states
+  resources :suburbs
+  
+#  resources :countries, :has_many => [:states]
+#  resources :states, :has_many => [:suburbs]
+  
+   
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

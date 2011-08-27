@@ -20,9 +20,12 @@
     <%= f.text_field :country_long %>
   </div>
   <div class="field">  
-  <%= f.fields_for :states %>
-  <p><%= f.link_to_add "Add a State", :states %></p>
+    <%= f.fields_for :states %>
+    <p><%= f.link_to_add "Add a State", :states %></p>
   </div>  
+  <div class="field">
+
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
