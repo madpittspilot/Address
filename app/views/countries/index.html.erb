@@ -1,16 +1,16 @@
-<h1>Listing countries</h1>
-
+<h1>Countries</h1>
+<br />
 <table>
   <tr>
+    <th>Code</th>
     <th>Country</th>
-    <th>Country long</th>
     <th></th>
     <th></th>
     <th></th>
   </tr>
 
 <% @countries.each do |country| %>
-  <tr>
+  <tr class="<%= cycle("even", "odd") %>">
     <td><%= country.country %></td>
     <td><%= country.country_long %></td>
     <td><%= link_to 'Show', country %></td>
@@ -22,4 +22,4 @@
 
 <br />
 
-<%= link_to 'New Country', new_country_path %>
+<%= button_to 'New Country', new_country_path, :method => :get %><br />

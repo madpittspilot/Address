@@ -14,30 +14,30 @@
   <div class="field">
     <%= f.label "Name" %>
     <%= f.text_field :fname %>
-    <%= f.text_field :lname %>
+    <%= f.text_field :lname%>
   </div>
 
   <div class="field">
     <%= f.fields_for :phones %>
-    <p><%= f.link_to_add "Add a Phone", :phones %></p>
+    <p><%= f.link_to_add "Add a Phone", :phones %></p><br />
   </div>
 
   <div class="field">    
     <%= f.fields_for :emails %>
-    <p><%= f.link_to_add "Add an email", :emails %></p>
+    <p><%= f.link_to_add "Add an email", :emails %></p><br />
   </div>
     
   <div class="field">     
     <%= f.fields_for :addresses %>
-    <p><%= f.link_to_add "Add an Address", :addresses %></p>
+    <p><%= f.link_to_add "Add an Address", :addresses %></p><br />
   </div>
     
   <div class="field">
-    <%= f.label :dob %><br />
+    <%= f.label :dob %>
     <%= f.date_select :dob, :start_year => Date.current.year - 5 , :end_year => 1920, :default => { :year => Date.current.year - 40 }  %>
   </div>
   <div class="field">
-    <%= f.label :note %><br />
+    <%= f.label :note %>
     <%= f.text_area :note, :size => "40x5" %>
   </div>
   <div class="actions">

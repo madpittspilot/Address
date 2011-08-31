@@ -1,15 +1,27 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Country:</b>
-  <%= @country.country %>
+  <b><%= @country.country_long %></b>  
 </p>
 
 <p>
-  <b>Country long:</b>
-  <%= @country.country_long %>
+  Code:
+  <b><%= @country.country %></b>
 </p>
+<p>
+<table>
+  <tr>
+    <th>State</th>
+    <th>Code</th>
+  </tr>
 
+  <% @country.states.each do |id| %>
+  <tr class="<%= cycle("even", "odd") %>">
+    <td><%= id.state_long %></td>
+    <td><%= id.state %></td>
+  </tr>
+  <% end %>
+</table>
 
 <%= link_to 'Edit', edit_country_path(@country) %> |
 <%= link_to 'Back', countries_path %>

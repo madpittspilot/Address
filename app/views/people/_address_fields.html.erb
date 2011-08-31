@@ -4,7 +4,7 @@
 <%= f.link_to_remove "Remove Address" %><br />
 <%= f.label "Street 2 " %>
 <%= f.text_field :street_2 %><br />
-<%= f.label "Suburb " %>
+<%= f.label "The Rest", {},:class => "hidden-text"; %>
 <%= f.collection_select(:suburb_id, Suburb.all, :id, :suburb_and_state, options ={:prompt => "Select a Suburb"}, :class =>"suburb_select") %>
 </p>
 

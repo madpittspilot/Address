@@ -1,25 +1,36 @@
-<h1>Listing people</h1>
-
-<table>
+<h1>People</h1>
+<br />
+<table class="sorted">
   <tr>
-    <th>Name</th>
-    <th>Note</th>
+    <th><%= sortable "fname", "Name"  %></th>
+    <th><%= sortable "lname", "Surname" %></th>
     <th></th>
     <th></th>
     <th></th>
   </tr>
 
 <% @people.each do |person| %>
-  <tr>    
-    <td><a href="/people/<%= person.id %>"><%= person.full_name %></a></td>
-    <td><%= person.note %></td>
-    <td><%= link_to 'Show', person %></td>
-    <td><%= link_to 'Edit', edit_person_path(person) %></td>
-    <td><%= link_to 'Destroy', person, :confirm => 'Are you sure?', :method => :delete %></td>
+  <tr class = "grey">    
+    <td><a href="/people/<%= person.id %>"><%= person.fname %></a></td>
+    <td><a href="/people/<%= person.id %>"><%= person.lname %></a></td>
+    <td>Phone</td>
+    <td></td>
+    <td><%= button_to 'Show', person, :method => :get %></td>
+    <td><%= button_to 'Edit', edit_person_path(person), :method => :get %></td>
+    <td><%= button_to 'Delete', person, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
+  <% for phone in person.phones %>
+  <tr class = "white">
+    <td></td>
+    <td></td>
+    <td><%= phone.number %></td>
+    <td><%= phone.location.location %></td>
+  </tr>
+  <% end %>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Person', new_person_path %>
+<%= button_to 'New Person', new_person_path, :method => :get %><br />
+

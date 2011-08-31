@@ -2,7 +2,7 @@
 
 html,body { margin:0px; padding:0px; } 
 body { background-color: #fff; color: #333; }
-
+table { empty-cells:show; }
 
 body, p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
@@ -17,26 +17,36 @@ pre {
 }
 
 a { color: #000; }
-a:visited { color: #666; }
+a:visited { color: #000; }
 a:hover { color: #8500C7; }
 
-h1 { font-size: 18pt; font-weight: bold; text-align: left;  } 
-
+h1 { font-size: 18pt; font-weight: bold; text-align: left; text-shadow: #979797 2px 2px 4px; } 
 
 div.field, div.actions {
   margin-bottom: 10px;
+}
+
+.plain a {
+	text-decoration: none;
 }
 
 /*
   This will align labels to their right border. Good for label and field on same line (pretend table layout)
   Width could be 4em...
 */
-#field label {
-	width:20%;
+.field label {
+	width:7%;
 	float:left;
 	text-align:right;
 	margin-right: 0.5em;
 	display: block;
+	overflow: hidden;
+}
+
+.field input, textarea {
+	border: 1px solid;
+	border-color: #D8D8D8;
+
 }
 
 span.location-show {
@@ -47,19 +57,101 @@ span.location-show {
 	display: block;		
 }
 
+hidden-text label {
+	color: #fff;
 
-/* Styles for main page */
+}
+
+table tr.grey { 
+	background-color: #F2F2F2; 
+  border: solid 1px #D8D8D8;
+}
+
+table tr.white { 
+	background-color: white; 
+}
+
+table tr.even { 
+	background-color: #F2F2F2; 
+  border: solid 1px #D8D8D8;	
+}
+
+table tr.odd { 
+	background-color: white; 
+}
+
+table.sorted {
+  border-collapse: collapse;
+}
+
+.sorted td, .sorted th {
+  padding: 4px 10px;
+
+}
+
+.pretty .price {
+  text-align: right;
+}
+
+.sorted th .current {
+  padding-right: 12px;
+  background-repeat: no-repeat;
+  background-position: right center;
+}
+
+.sorted th .not-current {
+  padding-right: 12px;
+  background-repeat: no-repeat;
+  background-position: right center;
+}
+
+.sorted th .asc {
+  background-image: url(/images/up_arrow.gif);
+}
+
+.sorted th .desc {
+  background-image: url(/images/down_arrow.gif);
+}
+
+.sorted a {
+		text-decoration: none;
+}
+
+/* Layout styles for main page */
 #banner { 
-	    background: #58A000; 
-	    border-bottom: 2px solid; 
-		height: 40px;
+/* bits:
+	  border-bottom: 2px solid; 
+*/
+	  background: #58A000; 
+
+		height: 80px;
 		position:fixed;
 		width:100%;
 		top:0;
 		left:0;
-	    font: small-caps 40px/40px "Times New Roman", serif; 
-	    color: #282; 
-	    text-align: center;
+	  font: small-caps 40px/40px "Times New Roman", serif; 
+	  color: #282; 
+	  text-align: center;
+	
+	 /* fallback/image non-cover color */
+   background-color: #1a82f7; 
+
+   /* fallback image */
+   background-image: url(images/fallback-gradient.png); 
+
+   /* Safari 5.1+, Mobile Safari, Chrome 10+ */
+   background-image: -webkit-linear-gradient(top, #2F2727, #1a82f7); 
+
+   /* Firefox 3.6+ */
+   background-image: -moz-linear-gradient(top, #123600, #55FF00 10%, #359E00 15%, #359E00 85%, #123600 100%);
+
+   /* IE 10+ */
+   background-image: -ms-linear-gradient(top, #2F2727, #1a82f7);
+
+   /* Opera 11.10+ */
+   background-image: -o-linear-gradient(top, #2F2727, #1a82f7);
+
+
 }
 
 #banner img { 
@@ -67,16 +159,15 @@ span.location-show {
 }
 
 #column-container { 
-
 		margin: 0;
 		overflow: hidden;
-	    padding-top: 42px; 		
+	  padding-top: 80px; 		
 }
 
 #main { 
-	    margin-left: 11em; 
-	    padding-left: 2em; 
-	    background: white;
+	  margin-left: 11em; 
+	  padding-left: 2em; 
+	  background: white;
 		padding-bottom: 1000px;
 		margin-bottom: -995px;
 }
@@ -84,10 +175,10 @@ span.location-show {
 #left-column {
 	 	position: fixed;
 		padding-top: 1em;
-	    padding-left: 1em; 
-	    padding-bottom: 1em;
-	    width: 10em; 
-	    background: #315900;
+	  padding-left: 1em; 
+	  padding-bottom: 1em;
+	  width: 10em; 
+	  background: #315900;
 		padding-bottom: 1000px;
 		margin-bottom: -995px;
 }
@@ -97,6 +188,39 @@ span.location-show {
 	    font-size: small;
 }
 #left-column a:hover { color: #FFF700; }
+
+
+.new css3 stuff {
+   /* fallback/image non-cover color */
+   background-color: #1a82f7; 
+
+   /* fallback image */
+   background-image: url(images/fallback-gradient.png); 
+
+   /* Safari 4+, Chrome 1-9 */
+   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#2F2727), to(#1a82f7));
+
+   /* Safari 5.1+, Mobile Safari, Chrome 10+ */
+   background-image: -webkit-linear-gradient(top, #2F2727, #1a82f7); 
+
+   /* Firefox 3.6+ */
+   background-image: -moz-linear-gradient(top, #2F2727, #1a82f7);
+
+   /* IE 10+ */
+   background-image: -ms-linear-gradient(top, #2F2727, #1a82f7);
+
+   /* Opera 11.10+ */
+   background-image: -o-linear-gradient(top, #2F2727, #1a82f7);
+
+  /* Rounded corners */
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	
+}
+
+
+
 
 /* Styles for the cart in the main page 
 #store .cart_title { 

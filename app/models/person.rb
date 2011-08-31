@@ -8,10 +8,12 @@ class Person < ActiveRecord::Base
     accepts_nested_attributes_for :phones, :reject_if => lambda { |a| a[:number].blank? }, :allow_destroy => true
     
     has_many :addresses, :dependent => :destroy
-    accepts_nested_attributes_for :addresses, :allow_destroy => true #, :reject_if => lambda { |a| a[:street_1].blank? }
+    accepts_nested_attributes_for :addresses, :reject_if => lambda { |a| a[:street_1].blank? and a[:street_2].blank? and a[:suburb_id].blank? }, :allow_destroy => true
 
     has_many :suburbs, :through => :addresses, :dependent => :destroy
     accepts_nested_attributes_for :suburbs, :reject_if => lambda { |a| a[:suburb].blank? }
+    
+    validates_presence_of :full_name
     
     def full_name
       "#{fname} #{lname}"
@@ -22,9 +24,7 @@ class Person < ActiveRecord::Base
       #   @person ? @person.name : nil
       # vs
       #   @person.try(:name)
-      def try(method)
-        send method if respond_to? method
-      end
+
     end
       
 
